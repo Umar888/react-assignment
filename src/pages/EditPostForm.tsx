@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Input, Button, Modal } from 'antd';
 
 interface EditPostFormProps {
-    post: any | null; // Allow post to be null
+    post: any | null;
     visible: boolean;
     onCancel: () => void;
     onUpdate: (updatedPost: { title: string; body: string }) => void;
@@ -16,7 +16,7 @@ const EditPostForm: React.FC<EditPostFormProps> = ({ post, visible, onCancel, on
     };
 
     if (!post) {
-        return null; // Do not render if post is null
+        return null;
     }
 
     return (

@@ -32,37 +32,37 @@ const HeaderContainer = styled(Header)`
     align-items: center;
     justify-content: space-between;
     padding: 0 24px;
-    height: 64px; /* Increase the height of the header */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    height: 64px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const SearchInput = styled(Input)`
     background-color: #F7FBFE;
-    border-radius: 10px; /* Apply border-radius to the entire input */
-    width: 300px; /* Adjust width as needed */
+    border-radius: 10px;
+    width: 300px;
 
     .ant-input-prefix {
-        color: #B4B9C5; /* Color of the search icon */
+        color: #B4B9C5;
     }
 
     .ant-input {
-        border: none; /* Remove border */
-        border-radius: 10px; /* Ensure the input has the same border-radius */
+        border: none;
+        border-radius: 10px;
     }
 
     .ant-input-search-button {
-        display: none; /* Hide the search button */
+        display: none; 
     }
 
     .ant-input-group-addon {
-        border-radius: 0 10px 10px 0; /* Apply border-radius to the right side */
+        border-radius: 0 10px 10px 0;
     }
 `;
 
 const IconContainer = styled.div`
     display: flex;
     align-items: center;
-    gap: 16px; /* Space between icons */
+    gap: 16px;
 `;
 
 const AddButton = styled(Button)`

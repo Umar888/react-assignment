@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import {CalendarOutlined, FileTextOutlined, InfoCircleOutlined} from "@ant-design/icons";
 
 interface User {
     id: number;
