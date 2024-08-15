@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Input, Avatar, Button } from 'antd';
+import { Layout, Input, Button } from 'antd';
 import { SearchOutlined, BellOutlined, MessageOutlined, AppstoreOutlined  } from '@ant-design/icons';
 import styled from 'styled-components';
 import useUserData from "../hooks/useUserData";

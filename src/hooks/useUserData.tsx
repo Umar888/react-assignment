@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 interface User {
     id: number;
@@ -8,11 +8,11 @@ interface User {
 
 const useUserData = (): User | null => {
     const [user, setUser] = useState<User | null>(null);
-
+    const apiUrl = process.env.REACT_APP_API_URL;
     useEffect(() => {
         const fetchUser = async () => {
             const userId = Math.floor(Math.random() * 10) + 1;
-            const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+            const response = await fetch(`${apiUrl}/users/${userId}`);
             const data: User = await response.json();
             setUser(data);
         };

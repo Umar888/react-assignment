@@ -90,6 +90,11 @@ const UserName = styled.p`
     margin: 6px 0 0px 0;
     font-size: 16px;
 `;
+const UserEmail = styled.p`
+    color: blue;
+    margin: 6px 0 0px 0;
+    font-size: 12px;
+`;
 
 const SubMenuItem = styled(Menu.Item)`
     display: flex;
@@ -186,6 +191,7 @@ const Sidebar: React.FC = () => {
                 <UserImage src={`https://robohash.org/${user?.id}`} alt="User Image" />
                 <GreetingText>Hello</GreetingText>
                 <UserName>{user?.name || 'Loading...'}</UserName>
+                <UserEmail>{user?.email || 'Loading...'}</UserEmail>
                 <MetricsButton>
                     <LineChartOutlined />
                     Show Metrics

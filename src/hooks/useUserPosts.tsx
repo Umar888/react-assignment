@@ -9,6 +9,8 @@ interface Post {
 }
 
 const useUserPosts = (userId: number | null) => {
+    const apiUrl = process.env.REACT_APP_API_URL;
+    const picsUrl = process.env.REACT_APP_PICS_URL;
     const [posts, setPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -17,12 +19,12 @@ const useUserPosts = (userId: number | null) => {
 
         const fetchPosts = async () => {
             try {
-                const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`);
+                const response = await fetch(`${apiUrl}/users/${userId}/posts`);
                 const data: Post[] = await response.json();
                 // Mock adding image URLs
                 const postsWithImages = data.map(post => ({
                     ...post,
-                    imageUrl: `https://picsum.photos/300/200?random=${post.id}`
+                    imageUrl: `${picsUrl}/300/200?random=${post.id}`
                 }));
                 setPosts(postsWithImages);
             } catch (error) {
@@ -37,7 +39,7 @@ const useUserPosts = (userId: number | null) => {
 
     const deletePost = async (postId: number) => {
         try {
-            await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+            await fetch(`${apiUrl}/posts/${postId}`, {
                 method: 'DELETE'
             });
             // Update state to remove the deleted post
@@ -49,7 +51,7 @@ const useUserPosts = (userId: number | null) => {
 
     const updateUserPost = async (postId: number, updatedPost: { title: string; body: string }) => {
         try {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+            const response = await fetch(`${apiUrl}/posts/${postId}`, {
                 method: 'PUT',
                 body: JSON.stringify({
                     ...updatedPost,
